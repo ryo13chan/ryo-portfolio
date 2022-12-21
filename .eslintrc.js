@@ -25,5 +25,6 @@ module.exports = {
     ref: 'readonly',
     useRouter: 'readonly',
     useHead: 'readonly',
+    useRoute: 'readonly',
   },
 }

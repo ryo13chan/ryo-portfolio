@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
+    "chart.js": "^4.1.1",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.28",
     "primeflex": "^3.3.0",

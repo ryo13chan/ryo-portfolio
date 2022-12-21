@@ -7,7 +7,7 @@ useHead({
 </script>
 
 <template>
-  <!-- <AppHeader /> -->
+  <AppHeader />
   <main>
     <slot></slot>
   </main>
