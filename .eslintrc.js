@@ -18,13 +18,14 @@ module.exports = {
   },
   plugins: ['vue'],
   rules: {
+    'no-undef': 'off',
     'vue/multi-word-component-names': 'off',
   },
-  globals: {
-    computed: 'readonly',
-    ref: 'readonly',
-    useRouter: 'readonly',
-    useHead: 'readonly',
-    useRoute: 'readonly',
-  },
+  // globals: {
+  //   computed: 'readonly',
+  //   ref: 'readonly',
+  //   useRouter: 'readonly',
+  //   useHead: 'readonly',
+  //   useRoute: 'readonly',
+  // },
 }

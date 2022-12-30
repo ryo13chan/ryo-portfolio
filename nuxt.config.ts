@@ -11,7 +11,14 @@ export default defineNuxtConfig({
   build: {
     transpile: ['primevue'],
   },
-  modules: ['@pinia/nuxt'],
+  modules: [
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore', 'storeToRefs'],
+      },
+    ],
+  ],
   vite: {
     base: '/_nuxt/',
     css: {
@@ -26,5 +33,8 @@ export default defineNuxtConfig({
     head: {
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.ico' }],
     },
+  },
+  imports: {
+    dirs: ['store'],
   },
 })

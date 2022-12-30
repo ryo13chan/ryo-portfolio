@@ -1,5 +1,4 @@
 <script setup lang="ts">
-/* eslint-disable no-undef */
 useHead({
   titleTemplate: (titleChunk) =>
     titleChunk ? `${titleChunk} - Ryo's Portfolio` : "Ryo's Portfolio",
@@ -11,8 +10,8 @@ useHead({
   <main>
     <slot></slot>
   </main>
-  <!-- <ScrollTop />
-  <AppFooter /> -->
+  <ScrollTop />
+  <!-- <AppFooter /> -->
 </template>
 
 <style scoped lang="scss">
