@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 useHead({
   titleTemplate: (titleChunk) =>
-    titleChunk ? `${titleChunk} - Web Portfolio` : 'Web Portfolio',
+    titleChunk ? `${titleChunk} - Ryo's Portfolio` : "Ryo's Portfolio",
 })
 </script>
 
