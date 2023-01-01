@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const iconImageUrl = computed(
-  () => new URL('../assets/images/icon.jpg', import.meta.url).href
-)
-
 type menuItem = {
   key: string
   label: string
@@ -50,12 +46,7 @@ const show = () => (visibleMenu.value = true)
   >
     <div class="flex justify-content-between align-items-center">
       <div class="flex align-items-center">
-        <Avatar
-          :image="iconImageUrl"
-          class="mr-3"
-          size="xlarge"
-          shape="circle"
-        />
+        <Avatar image="icon.jpg" class="mr-3" size="xlarge" shape="circle" />
         <GitLatestCommit />
       </div>
       <nav class="flex align-items-center">
