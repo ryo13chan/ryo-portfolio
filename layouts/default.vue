@@ -11,12 +11,12 @@ useHead({
     <slot></slot>
   </main>
   <ScrollTop />
-  <!-- <AppFooter /> -->
+  <AppFooter />
 </template>
 
 <style scoped lang="scss">
-/* main {
+main {
   flex: 1;
   padding: 1rem;
-} */
+}
 </style>
