@@ -8,11 +8,11 @@ body {
   color: var(--text-color);
   background: var(--surface-ground);
 
-  // #__nuxt {
-  //   display: flex;
-  //   flex-flow: column;
-  //   min-height: 100vh;
-  // }
+  #__nuxt {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+  }
 }
 
 .page-enter-active,
