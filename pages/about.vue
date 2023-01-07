@@ -1,7 +1,7 @@
 <script setup lang="ts">
-// import SelfIntroduction from '~/components/about/SelfIntroduction.vue'
+import SelfIntroduction from '~/components/about/SelfIntroduction.vue'
 import Timeline from '~/components/about/Timeline.vue'
-// import Career from '~/components/about/Career.vue'
+import Career from '~/components/about/Career.vue'
 
 const title = ref('About')
 useHead({
@@ -14,13 +14,13 @@ useHead({
     <h2>{{ title }}</h2>
     <div class="grid">
       <div class="col-12">
-        <!-- <SelfIntroduction /> -->
+        <SelfIntroduction />
       </div>
       <div class="col-12">
         <Timeline />
       </div>
       <div class="col-12">
-        <!-- <Career /> -->
+        <Career />
       </div>
     </div>
   </div>
