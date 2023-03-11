@@ -23,11 +23,11 @@ withDefaults(
 <style scoped lang="scss">
 @import 'primeflex/primeflex';
 
-::v-deep .p-panel-header {
+:deep(.p-panel-header) {
   @include styleclass('border-round-top-2xl');
 }
 
-::v-deep .p-panel-content {
+:deep(.p-panel-content) {
   @include styleclass('border-round-bottom-2xl');
 }
 

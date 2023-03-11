@@ -29,11 +29,11 @@ useHead({
 <style scoped lang="scss">
 @import 'primeflex/primeflex';
 
-::v-deep .p-tabview-nav-content {
+:deep(.p-tabview-nav-content) {
   @include styleclass('border-round-top-2xl');
 }
 
-::v-deep .p-tabview-panels {
+:deep(.p-tabview-panels) {
   @include styleclass('border-round-bottom-2xl');
 }
 </style>

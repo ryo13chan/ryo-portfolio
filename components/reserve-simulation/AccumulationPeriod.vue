@@ -58,7 +58,7 @@ const calculate = () => {
 </template>
 
 <style scoped lang="scss">
-@import 'primeflex/primeflex.scss';
+@import 'primeflex/primeflex';
 
 .input {
   @include styleclass('flex align-items-center h-4rem');

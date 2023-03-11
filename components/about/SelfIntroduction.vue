@@ -36,7 +36,7 @@ const highlightJSON = hljs.highlightAuto(
   @include styleclass('border-round-2xl');
 }
 
-::v-deep .p-card-body {
+:deep(.p-card-body) {
   @include styleclass('border-round-2xl surface-900');
 }
 </style>
