@@ -15,5 +15,11 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/rakuten",
+      "destination": "https://books.rakuten.co.jp"
+    }
   ]
 }
