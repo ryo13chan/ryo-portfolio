@@ -16,7 +16,7 @@
       ]
     }
   ],
-  "redirects": [
+  "rewrites": [
     {
       "source": "/rakuten/:path*",
       "destination": "https://books.rakuten.co.jp/:path*"
