@@ -18,8 +18,8 @@
   ],
   "redirects": [
     {
-      "source": "https://ryo-portfolio.vercel.app/rakuten",
-      "destination": "https://books.rakuten.co.jp"
+      "source": "/rakuten/:path*",
+      "destination": "https://books.rakuten.co.jp/:path*"
     }
   ]
 }
