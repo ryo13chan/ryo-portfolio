@@ -339,7 +339,15 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
           target="_blank"
           :skills="ryoDashboardSkills"
           description="個人用のダッシュボードです。"
-        />
+        >
+          <template #content>
+            <div>個人用のダッシュボードです。</div>
+            <div>
+              作っているうちに「これ、<span class="font-bold">Notion</span
+              >で良くね？」と気付いてしまい、更新停止中です・・・。
+            </div>
+          </template>
+        </WorkCard>
       </div>
     </div>
   </div>
