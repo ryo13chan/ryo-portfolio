@@ -18,7 +18,13 @@ export default defineNuxtConfig({
         autoImports: ['defineStore', 'storeToRefs'],
       },
     ],
+    '@nuxt/content',
   ],
+  content: {
+    highlight: {
+      theme: 'github-light',
+    },
+  },
   vite: {
     base: '/_nuxt/',
     css: {

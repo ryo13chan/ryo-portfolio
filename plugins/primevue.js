@@ -21,6 +21,8 @@ import Avatar from 'primevue/avatar'
 import Chip from 'primevue/chip'
 import ScrollTop from 'primevue/scrolltop'
 import Tag from 'primevue/tag'
+import Terminal from 'primevue/terminal'
+import TerminalService from 'primevue/terminalservice'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(PrimeVue)
@@ -53,4 +55,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('Chip', Chip)
   nuxtApp.vueApp.component('ScrollTop', ScrollTop)
   nuxtApp.vueApp.component('Tag', Tag)
+  nuxtApp.vueApp.component('Terminal', Terminal)
+  nuxtApp.vueApp.component('TerminalService', TerminalService)
 })
