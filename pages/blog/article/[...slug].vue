@@ -46,23 +46,23 @@ const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
 }
 
 .tags {
-  @include styleclass('flex flex-wrap gap-2');
+  @include styleclass('flex flex-wrap gap-1');
 }
 
-::v-deep h2,
-::v-deep h3,
-::v-deep h4,
-::v-deep h5 {
+:deep(h2),
+:deep(h3),
+:deep(h4),
+:deep(h5) {
   a {
     color: var(--text-color);
   }
 }
 
-::v-deep pre {
+:deep(pre) {
   @include styleclass('p-2 surface-200 border-round-md');
 }
 
-::v-deep p > code {
+:deep(p > code) {
   @include styleclass('px-2 py-1 surface-200 border-round-md');
 }
 </style>

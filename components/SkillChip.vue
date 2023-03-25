@@ -32,10 +32,11 @@ const iconUrl = (skill: Skill): string => {
 <style scoped lang="scss">
 .p-chip {
   height: 2rem;
+  font-size: 0.9rem;
 
   img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
 </style>

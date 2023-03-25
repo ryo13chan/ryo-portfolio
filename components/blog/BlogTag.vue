@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { BlogTag } from '~/composables/blogTagData'
 
-type Props = {
+defineProps<{
   tag: BlogTag | undefined
-}
-defineProps<Props>()
+}>()
 </script>
 
 <template>
@@ -18,9 +17,14 @@ defineProps<Props>()
 <style scoped lang="scss">
 @import 'primeflex/primeflex';
 
-.blog-tag {
-  &:hover {
-    @include styleclass('bg-gray-400');
+.p-chip {
+  height: 2rem;
+  font-size: 0.9rem;
+
+  &.blog-tag {
+    &:hover {
+      @include styleclass('bg-gray-400');
+    }
   }
 }
 </style>

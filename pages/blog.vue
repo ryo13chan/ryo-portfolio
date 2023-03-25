@@ -86,7 +86,7 @@ watch(
   }
 
   .tags {
-    @include styleclass('flex flex-wrap gap-2 pt-3');
+    @include styleclass('flex flex-wrap gap-1 pt-3');
   }
 
   .content {

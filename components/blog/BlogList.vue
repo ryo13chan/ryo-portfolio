@@ -74,6 +74,6 @@ const blogTag = (key: string) => blogTagData.find((tag) => tag.key === key)
 }
 
 .tags {
-  @include styleclass('flex flex-wrap gap-2');
+  @include styleclass('flex flex-wrap gap-1');
 }
 </style>

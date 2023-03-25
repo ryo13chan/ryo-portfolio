@@ -49,6 +49,6 @@ defineProps<{
 .skill-area {
   @include styleclass('flex flex-wrap');
 
-  gap: 1rem;
+  gap: 0.5rem;
 }
 </style>

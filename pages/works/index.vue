@@ -222,13 +222,56 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
     noIcon: true,
   },
 ])
+
+const chatGptTerminalSkills = ref<Skill[]>([])
+
+const workSkillOptions: Skill[] = Array.from(
+  new Map(
+    webPortfolioSkills.value
+      .concat(
+        ryoDashboardSkills.value,
+        mobilePortfolioSkills.value,
+        reserveSimulationSkills.value,
+        newComicsSkills.value,
+        blogSkills.value,
+        yesOrNoSkills.value,
+        twitterAdvancedSearchMakerSkills.value,
+        chatGptTerminalSkills.value
+      )
+      .map((skill) => [skill.key, skill])
+  ).values()
+).sort((a, b) => a.key.localeCompare(b.key))
+const selectedWorkSkills = ref<string[]>([])
+const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
+  if (!selectedWorkSkills.value || !selectedWorkSkills.value.length) return true
+  return skills.some((skill) => selectedWorkSkills.value.includes(skill.key))
+})
 </script>
 
 <template>
   <div class="mx-2 lg:px-8">
     <h2>{{ title }}</h2>
+    <div class="flex justify-content-end">
+      <MultiSelect
+        v-model="selectedWorkSkills"
+        :options="workSkillOptions"
+        optionLabel="label"
+        optionValue="key"
+        placeholder="Skill"
+        class="mb-2 w-full md:w-20rem"
+      >
+        <template #option="slotProps">
+          <div class="flex align-items-center">
+            <SkillChip :skill="slotProps.option" />
+          </div>
+        </template>
+      </MultiSelect>
+    </div>
     <div class="grid">
-      <div class="col-12 lg:col-6">
+      <div
+        v-show="selectedWorkSkillOptionsKeys(webPortfolioSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
         <WorkCard
           image="web-portfolio.png"
           title="Web Portfolio"
@@ -237,8 +280,10 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
           description="当サイトです。"
         />
       </div>
-
-      <div class="col-12 lg:col-6">
+      <div
+        v-show="selectedWorkSkillOptionsKeys(blogSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
         <WorkCard
           image="blog.png"
           title="Blog"
@@ -250,7 +295,10 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
           </template>
         </WorkCard>
       </div>
-      <div class="col-12 lg:col-6">
+      <div
+        v-show="selectedWorkSkillOptionsKeys(reserveSimulationSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
         <WorkCard
           image="reserve-simulation.png"
           title="積立シミュレーション"
@@ -269,7 +317,10 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
           </template>
         </WorkCard>
       </div>
-      <div class="col-12 lg:col-6">
+      <div
+        v-show="selectedWorkSkillOptionsKeys(newComicsSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
         <WorkCard
           image="new-comics.png"
           title="新刊コミック一覧"
@@ -282,8 +333,10 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
           </template>
         </WorkCard>
       </div>
-
-      <div class="col-12 lg:col-6">
+      <div
+        v-show="selectedWorkSkillOptionsKeys(yesOrNoSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
         <WorkCard
           image="yes-or-no.png"
           title="Yes or No"
@@ -308,7 +361,10 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
           </template>
         </WorkCard>
       </div>
-      <div class="col-12 lg:col-6">
+      <div
+        v-show="selectedWorkSkillOptionsKeys(twitterAdvancedSearchMakerSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
         <WorkCard
           image="twitter-advanced-search-maker.png"
           title="Twitter 高度な検索メーカー"
@@ -321,7 +377,23 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
           >
         </WorkCard>
       </div>
-      <div class="col-12 lg:col-6">
+      <div
+        v-show="selectedWorkSkillOptionsKeys(chatGptTerminalSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
+        <WorkCard
+          image=""
+          title="ChatGPTターミナル"
+          to="/works/chatgpt-terminal/"
+          :skills="chatGptTerminalSkills"
+        >
+          <template #content>test</template>
+        </WorkCard>
+      </div>
+      <div
+        v-show="selectedWorkSkillOptionsKeys(mobilePortfolioSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
         <WorkCard
           image="mobile-portfolio.png"
           title="Mobile Portfolio"
@@ -331,7 +403,10 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
           description="モバイルエンジニアとしてのポートフォリオサイトです。"
         />
       </div>
-      <div class="col-12 lg:col-6">
+      <div
+        v-show="selectedWorkSkillOptionsKeys(ryoDashboardSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
         <WorkCard
           image="ryo-dashboard.png"
           title="Ryo Dashboard"
