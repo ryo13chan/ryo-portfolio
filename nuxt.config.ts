@@ -43,4 +43,9 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['store'],
   },
+  runtimeConfig: {
+    public: {
+      openaiApiKey: process.env.NUXT_OPENAI_API_KEY,
+    },
+  },
 })
