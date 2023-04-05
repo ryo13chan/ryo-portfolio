@@ -20,6 +20,7 @@ export const useChatGptStore = defineStore<'chatGpt', State, Getters, Actions>(
         const configuration = new Configuration({
           apiKey: useNuxtApp().$config.public.openaiApiKey,
         })
+        delete configuration.baseOptions.headers['User-Agent'] // コンソールエラー回避
         const openai = new OpenAIApi(configuration)
 
         this.messages.push({
