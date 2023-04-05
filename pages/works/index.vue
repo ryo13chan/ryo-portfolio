@@ -223,7 +223,40 @@ const twitterAdvancedSearchMakerSkills = ref<Skill[]>([
   },
 ])
 
-const chatGptTerminalSkills = ref<Skill[]>([])
+const chatGptTerminalSkills = ref<Skill[]>([
+  {
+    key: 'nuxtjs',
+    label: 'Nuxt3',
+  },
+  {
+    key: 'vuejs',
+    label: 'Vue Composition API',
+  },
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+  },
+  {
+    key: 'primevue',
+    label: 'PrimeVUE',
+    noIcon: true,
+  },
+  {
+    key: 'primeflex',
+    label: 'PrimeFlex',
+    noIcon: true,
+  },
+  {
+    key: 'pinia',
+    label: 'Pinia',
+    noIcon: true,
+  },
+  {
+    key: 'openai-api',
+    label: 'OpenAI API',
+    noIcon: true,
+  },
+])
 
 const workSkillOptions: Skill[] = Array.from(
   new Map(
@@ -382,12 +415,20 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
         class="col-12 lg:col-4 md:col-6"
       >
         <WorkCard
-          image=""
-          title="ChatGPTターミナル"
+          image="chatgpt-terminal.png"
+          title="ChatGPT Terminal"
           to="/works/chatgpt-terminal/"
           :skills="chatGptTerminalSkills"
         >
-          <template #content>test</template>
+          <template #content>
+            <div>
+              対話形式で文章生成ができるターミナルのコンポーネントです。
+            </div>
+            <div>
+              ChatGPTのモデル<span class="font-bold">gpt-3.5-turbo</span
+              >を使用しています。
+            </div>
+          </template>
         </WorkCard>
       </div>
       <div
@@ -400,8 +441,12 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
           href="https://ryo13chan.github.io/mobile-portfolio/"
           target="_blank"
           :skills="mobilePortfolioSkills"
-          description="モバイルエンジニアとしてのポートフォリオサイトです。"
-        />
+        >
+          <template #content>
+            <div>モバイルエンジニアとしてのポートフォリオサイトです。</div>
+            <div>※更新停止中</div>
+          </template>
+        </WorkCard>
       </div>
       <div
         v-show="selectedWorkSkillOptionsKeys(ryoDashboardSkills)"
@@ -410,17 +455,12 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
         <WorkCard
           image="ryo-dashboard.png"
           title="Ryo Dashboard"
-          href="https://ryo-dashboard.vercel.app/"
-          target="_blank"
           :skills="ryoDashboardSkills"
           description="個人用のダッシュボードです。"
         >
           <template #content>
             <div>個人用のダッシュボードです。</div>
-            <div>
-              作っているうちに「これ、<span class="font-bold">Notion</span
-              >で良くね？」と気付いてしまい、更新停止中です・・・。
-            </div>
+            <div>※非公開・更新停止中</div>
           </template>
         </WorkCard>
       </div>

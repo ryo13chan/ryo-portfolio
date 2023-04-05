@@ -2,7 +2,7 @@
 import TerminalService from 'primevue/terminalservice'
 import { ChatCompletionRequestMessageRoleEnum } from 'openai'
 
-const title = ref('ChatGPTターミナル')
+const title = ref('ChatGPT Terminal')
 useHead({
   title: title.value,
 })
