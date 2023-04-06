@@ -32,8 +32,13 @@ const menus = ref<menuItem[]>([
   },
 ])
 const isActiveLink = (key: string): boolean => {
-  if (key !== 'blog') return false
-  return useRoute().path.includes('/blog')
+  switch (key) {
+    case 'blog':
+    case 'works':
+      return useRoute().path.includes(`/${key}`)
+    default:
+      return false
+  }
 }
 
 const visibleMenu = ref<boolean>(false)
