@@ -3,4 +3,8 @@ export type BlogTag = {
   label: string
 }
 
-export const blogTagData: BlogTag[] = [{ key: 'markdown', label: 'Markdown' }]
+export const blogTagData: BlogTag[] = [
+  { key: 'javascript', label: 'JavaScript' },
+  { key: 'markdown', label: 'Markdown' },
+  { key: 'openai', label: 'OpenAI' },
+]
