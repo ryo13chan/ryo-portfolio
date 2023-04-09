@@ -1,6 +1,6 @@
 ---
 title: OpenAI API「used to set unsafe header "User-Agent”」エラー対応
-createdAt: 2022-04-09
+createdAt: 2023-04-09
 tags: ['openai', 'javascript']
 thumbnail: '/programmer.png'
 ---
