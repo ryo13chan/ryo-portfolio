@@ -20,9 +20,10 @@ defineProps<{
       </nuxt-link>
     </template>
     <template #title>
-      <nuxt-link :href="href" :to="to" :target="target" class="title">{{
-        title
-      }}</nuxt-link>
+      <nuxt-link :href="href" :to="to" :target="target" class="title">
+        <span class="title-text">{{ title }}</span>
+        <i v-if="href" class="pi pi-external-link ml-2"></i>
+      </nuxt-link>
     </template>
     <template #subtitle>
       <div class="skill-area">
@@ -41,7 +42,9 @@ defineProps<{
 @import 'primeflex/primeflex';
 
 .title {
-  &:hover {
+  @include styleclass('flex align-items-center');
+
+  &-text:hover {
     text-decoration: underline;
   }
 }
