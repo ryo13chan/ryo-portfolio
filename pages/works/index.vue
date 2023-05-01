@@ -258,6 +258,41 @@ const chatGptTerminalSkills = ref<Skill[]>([
   },
 ])
 
+const openAiImageGeneratorSkills = ref<Skill[]>([
+  {
+    key: 'nuxtjs',
+    label: 'Nuxt3',
+  },
+  {
+    key: 'vuejs',
+    label: 'Vue Composition API',
+  },
+  {
+    key: 'typescript',
+    label: 'TypeScript',
+  },
+  {
+    key: 'primevue',
+    label: 'PrimeVUE',
+    noIcon: true,
+  },
+  {
+    key: 'primeflex',
+    label: 'PrimeFlex',
+    noIcon: true,
+  },
+  {
+    key: 'pinia',
+    label: 'Pinia',
+    noIcon: true,
+  },
+  {
+    key: 'openai-api',
+    label: 'OpenAI API',
+    noIcon: true,
+  },
+])
+
 const workSkillOptions: Skill[] = Array.from(
   new Map(
     webPortfolioSkills.value
@@ -269,7 +304,8 @@ const workSkillOptions: Skill[] = Array.from(
         blogSkills.value,
         yesOrNoSkills.value,
         twitterAdvancedSearchMakerSkills.value,
-        chatGptTerminalSkills.value
+        chatGptTerminalSkills.value,
+        openAiImageGeneratorSkills.value
       )
       .map((skill) => [skill.key, skill])
   ).values()
@@ -430,6 +466,18 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
             </div>
           </template>
         </WorkCard>
+      </div>
+      <div
+        v-show="selectedWorkSkillOptionsKeys(openAiImageGeneratorSkills)"
+        class="col-12 lg:col-4 md:col-6"
+      >
+        <WorkCard
+          image="open-ai-image-generator.png"
+          title="OpenAI Image Generator"
+          to="/works/open-ai-image-generator/"
+          :skills="openAiImageGeneratorSkills"
+          description="OpenAI APIを使用して画像を生成するアプリです。"
+        />
       </div>
       <div
         v-show="selectedWorkSkillOptionsKeys(mobilePortfolioSkills)"
