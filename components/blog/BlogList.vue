@@ -29,7 +29,10 @@ const blogTag = (key: string) => blogTagData.find((tag) => tag.key === key)
         class="flex py-3 border-bottom-1 border-300"
       >
         <nuxt-link :to="article._path">
-          <img :src="article.thumbnail" class="thumbnail" />
+          <img
+            :src="article.thumbnail ? article.thumbnail : '/icon.jpg'"
+            class="thumbnail"
+          />
         </nuxt-link>
         <div>
           <div class="flex align-items-center">
@@ -49,7 +52,6 @@ const blogTag = (key: string) => blogTagData.find((tag) => tag.key === key)
               />
             </div>
           </div>
-          <!-- <h2>{{ article }}</h2> -->
         </div>
       </div>
     </ContentRenderer>
