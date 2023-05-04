@@ -13,7 +13,7 @@ const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
 </script>
 
 <template>
-  <div class="mx-2 lg:px-8">
+  <div class="mx-2 p-4 border-round-lg bg-white">
     <ContentDoc>
       <template #default="{ doc }">
         <div class="flex align-items-center mt-2">
