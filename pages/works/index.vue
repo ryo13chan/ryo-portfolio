@@ -345,6 +345,7 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
           image="web-portfolio.png"
           title="Web Portfolio"
           to="/"
+          githubHref="https://github.com/ryo13chan/ryo-portfolio"
           :skills="webPortfolioSkills"
           description="当サイトです。"
         />
@@ -411,6 +412,7 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
           title="Yes or No"
           href="https://yes-or-no-66adf.web.app/"
           target="_blank"
+          githubHref="https://github.com/ryo13chan/yes-or-no"
           :skills="yesOrNoSkills"
         >
           <template #content>
@@ -439,6 +441,7 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
           title="Twitter 高度な検索メーカー"
           href="https://twitter-advanced-search-maker.vercel.app"
           target="_blank"
+          githubHref="https://github.com/ryo13chan/twitter-advanced-search-maker"
           :skills="twitterAdvancedSearchMakerSkills"
         >
           <template #content
@@ -488,6 +491,7 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
           title="Mobile Portfolio"
           href="https://ryo13chan.github.io/mobile-portfolio/"
           target="_blank"
+          githubHref="https://github.com/ryo13chan/mobile-portfolio"
           :skills="mobilePortfolioSkills"
         >
           <template #content>
