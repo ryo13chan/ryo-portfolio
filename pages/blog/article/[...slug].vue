@@ -49,6 +49,12 @@ const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
   @include styleclass('flex flex-wrap gap-1');
 }
 
+:deep(li > a) {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 :deep(h2),
 :deep(h3),
 :deep(h4),
