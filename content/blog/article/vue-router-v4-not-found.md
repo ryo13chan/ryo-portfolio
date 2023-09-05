@@ -2,7 +2,7 @@
 title: Vue Router v4でpathに*が使用できなくなっていた
 createdAt: 2023-06-17
 tags: ['javascript', 'vuejs']
-thumbnail: '/programmer.png'
+thumbnail: '/vuejs.png'
 ---
 
 ## Vue Router V4 で 404 ページを作成

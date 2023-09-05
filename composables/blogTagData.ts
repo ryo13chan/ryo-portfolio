@@ -10,4 +10,5 @@ export const blogTagData: BlogTag[] = [
   { key: 'vuejs', label: 'Vue.js' },
   { key: '振り返り', label: '振り返り' },
   { key: '2023', label: '2023年' },
+  { key: 'css', label: 'CSS' },
 ]
