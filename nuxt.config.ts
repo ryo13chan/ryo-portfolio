@@ -48,4 +48,18 @@ export default defineNuxtConfig({
       openaiApiKey: process.env.NUXT_OPENAI_API_KEY,
     },
   },
+  nitro: {
+    devProxy: {
+      '/rakuten': {
+        target: 'https://books.rakuten.co.jp',
+        changeOrigin: true,
+        // hostRewrite: true,
+        // cookieDomainRewrite: true,
+        headers: {
+          'X-Forwarded-Host': 'localhost:3000',
+          'X-Forwarded-Proto': 'http',
+        },
+      },
+    },
+  }
 })
