@@ -19,7 +19,7 @@ const openGithub = () => window.open(props.githubHref, '_blank')
   <Card class="border-round-2xl">
     <template #header>
       <nuxt-link :href="href" :to="to" :target="target">
-        <img :src="image" class="p-2" />
+        <img :src="image" class="p-2 w-full" />
       </nuxt-link>
     </template>
     <template #title>
