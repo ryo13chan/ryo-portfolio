@@ -2,7 +2,7 @@
 title: 「Using nitro.config.ts is not supported together with Nuxt.」のWarning対応
 createdAt: 2023-09-23
 tags: ['nuxtjs']
-thumbnail: '/vuejs.png'
+thumbnail: '/nuxt.png'
 ---
 
 ## ローカル環境で WARN
