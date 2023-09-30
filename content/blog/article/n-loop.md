@@ -2,7 +2,7 @@
 title: JavaScriptで任意の数でループ処理
 createdAt: 2023-06-27
 tags: ['javascript']
-thumbnail: '/programmer.png'
+thumbnail: '/js.png'
 ---
 
 ## 任意の数でループしたい
