@@ -11,7 +11,11 @@ const isShowNewLabel = computed(() => {
   return dayjs().subtract(7, 'day').isBefore(dayjs(commitDate.value))
 })
 
-await getCommitData()
+try {
+  await getCommitData()
+} catch {
+  console.error('Failed to get commit data')
+}
 </script>
 
 <template>
