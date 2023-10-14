@@ -44,6 +44,7 @@ const isActiveLink = (key: string): boolean => {
 const visibleMenu = ref<boolean>(false)
 const show = () => (visibleMenu.value = true)
 
+const router = useRouter()
 const showIcon = ref<boolean>(false)
 onMounted(() => {
   showIcon.value = true
@@ -56,7 +57,12 @@ onMounted(() => {
   >
     <div class="flex justify-content-between align-items-center">
       <div class="flex align-items-center">
-        <Avatar class="mr-3 border-circle" size="xlarge" shape="circle">
+        <Avatar
+          class="mr-3 border-circle cursor-pointer"
+          size="xlarge"
+          shape="circle"
+          @click="router.push({ path: '/' })"
+        >
           <img v-show="showIcon" src="/icon.jpg" />
         </Avatar>
         <GitLatestCommit />
