@@ -7,6 +7,11 @@ useHead({
 const router = useRouter()
 const toAbout = () => router.push({ path: '/about' })
 const toWorks = () => router.push({ path: '/works' })
+
+const showIcon = ref<boolean>(false)
+onMounted(() => {
+  showIcon.value = true
+})
 </script>
 
 <template>
@@ -27,10 +32,11 @@ const toWorks = () => router.push({ path: '/works' })
       </div>
     </div>
     <Avatar
-      image="icon.jpg"
-      class="mr-3 w-15rem h-15rem md:w-15rem md:h-15rem"
+      class="mr-3 w-15rem h-15rem md:w-15rem md:h-15rem border-circle"
       shape="circle"
-    />
+    >
+      <img v-show="showIcon" src="/icon.jpg" />
+    </Avatar>
   </div>
 </template>
 
