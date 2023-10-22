@@ -39,6 +39,10 @@ const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
 <style scoped lang="scss">
 @import 'primeflex/primeflex';
 
+:deep(img) {
+  max-width: 100%;
+}
+
 .thumbnail {
   @include styleclass('w-full max-h-25rem');
 
