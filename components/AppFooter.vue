@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-3">
+  <footer class="py-3 h-6rem">
     <div class="flex justify-content-center">
       <nuxt-link href="https://github.com/ryo13chan" target="_blank">
         <Button

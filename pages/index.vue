@@ -48,6 +48,6 @@ onMounted(() => {
     'flex align-items-center justify-content-center flex-column md:flex-row'
   );
 
-  height: calc(100vh - $header-height);
+  min-height: inherit;
 }
 </style>

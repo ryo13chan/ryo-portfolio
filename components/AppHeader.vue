@@ -53,7 +53,7 @@ onMounted(() => {
 
 <template>
   <header
-    class="top-0 left-0 sticky bg-white w-full shadow-1 px-4 py-2 opacity-90"
+    class="top-0 left-0 sticky bg-white w-full shadow-1 px-4 py-2 opacity-90 h-5rem"
   >
     <div class="flex justify-content-between align-items-center">
       <div class="flex align-items-center">

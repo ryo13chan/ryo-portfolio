@@ -16,7 +16,7 @@ useHead({
 
 <style scoped lang="scss">
 main {
-  flex: 1;
+  min-height: calc(100vh - 5rem - 6rem - 2rem);
   padding: 1rem;
 }
 </style>
