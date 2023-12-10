@@ -13,4 +13,5 @@ export const blogTagData: BlogTag[] = [
   { key: '2023', label: '2023年' },
   { key: 'css', label: 'CSS' },
   { key: 'github', label: 'GitHub' },
+  { key: 'vscode', label: 'VSCode' },
 ]
