@@ -1,7 +1,7 @@
 ---
 title: CSSでスクロールバーを非表示にする
 createdAt: 2023-10-15
-tags: ['css']
+tags: ['css', 'html']
 thumbnail: '/css.png'
 ---
 
