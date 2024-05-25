@@ -16,4 +16,6 @@ export const blogTagData: BlogTag[] = [
   { key: 'css', label: 'CSS' },
   { key: 'github', label: 'GitHub' },
   { key: 'vscode', label: 'VSCode' },
+  { key: 'eslint', label: 'ESLint' },
+  { key: 'prettier', label: 'Prettier' },
 ]
