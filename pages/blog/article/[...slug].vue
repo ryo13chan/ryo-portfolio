@@ -69,7 +69,7 @@ const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
 }
 
 :deep(pre) {
-  @include styleclass('p-2 surface-200 border-round-md');
+  @include styleclass('p-3 surface-200 border-round-md');
 }
 
 :deep(p > code) {
