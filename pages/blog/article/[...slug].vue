@@ -59,6 +59,10 @@ const createdAt = (date: Date) => dayjs(date).format('YYYY-MM-DD')
   }
 }
 
+:deep(ul) {
+  line-height: 1.5;
+}
+
 :deep(h2),
 :deep(h3),
 :deep(h4),
