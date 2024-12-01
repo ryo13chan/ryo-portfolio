@@ -2,7 +2,9 @@
 type menuItem = {
   key: string
   label: string
-  to: string
+  to?: string
+  href?: string
+  target?: string
 }
 const menus = ref<menuItem[]>([
   {
@@ -28,7 +30,8 @@ const menus = ref<menuItem[]>([
   {
     key: 'blog',
     label: 'Blog',
-    to: '/blog/article',
+    href: 'https://ryo-blog-phi.vercel.app',
+    target: '_blank',
   },
 ])
 const isActiveLink = (key: string): boolean => {
@@ -73,6 +76,8 @@ onMounted(() => {
           <li v-for="menu in menus" :key="menu.key" class="menu-item px-3">
             <nuxt-link
               :to="menu.to"
+              :href="menu.href ? String(menu.href) : ''"
+              :target="menu.target ? String(menu.target) : ''"
               :class="{ 'router-link-active': isActiveLink(menu.key) }"
               >{{ menu.label }}</nuxt-link
             >
@@ -88,7 +93,12 @@ onMounted(() => {
         <Sidebar v-model:visible="visibleMenu" position="right">
           <ul class="list-none">
             <li v-for="menu in menus" :key="menu.key" class="menu-item my-4">
-              <nuxt-link :to="menu.to">{{ menu.label }}</nuxt-link>
+              <nuxt-link
+                :to="menu.to"
+                :href="menu.href ? String(menu.href) : ''"
+                :target="menu.target ? String(menu.target) : ''"
+                >{{ menu.label }}</nuxt-link
+              >
             </li>
           </ul>
         </Sidebar>

@@ -148,7 +148,7 @@ const newComicsSkills = ref<Skill[]>([
 const blogSkills = ref<Skill[]>([
   {
     key: 'nuxtjs',
-    label: 'Nuxt3',
+    label: 'Nuxt4',
   },
   {
     key: 'nuxtjs',
@@ -168,9 +168,8 @@ const blogSkills = ref<Skill[]>([
     noIcon: true,
   },
   {
-    key: 'primeflex',
-    label: 'PrimeFlex',
-    noIcon: true,
+    key: 'tailwindcss',
+    label: 'Tailwind CSS',
   },
 ])
 
@@ -357,11 +356,13 @@ const selectedWorkSkillOptionsKeys = computed(() => (skills: Skill[]) => {
         <WorkCard
           image="blog.png"
           title="Blog"
-          to="/blog/article"
+          href="https://ryo-blog-phi.vercel.app"
+          target="_blank"
           :skills="blogSkills"
         >
           <template #content>
             <div>ブログ機能です。不定期で更新します。</div>
+            <div>※2024/12 Nuxt4+Nuxt Contentで作り直しました</div>
           </template>
         </WorkCard>
       </div>
