@@ -1,65 +1,59 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: [
-    'normalize.css',
-    'primevue/resources/themes/saga-blue/theme.css',
-    'primevue/resources/primevue.css',
-    'primeflex/primeflex.css',
-    'primeicons/primeicons.css',
-    '@/assets/css/app.scss',
-  ],
-  build: {
-    transpile: ['primevue'],
-  },
   modules: [
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: ['defineStore', 'storeToRefs'],
-      },
-    ],
     '@nuxt/content',
+    '@nuxt/eslint',
+    '@nuxt/image',
+    '@nuxt/test-utils',
+    '@primevue/nuxt-module',
+    '@nuxtjs/tailwindcss',
   ],
-  content: {
-    highlight: {
-      theme: 'github-light',
-    },
-  },
-  vite: {
-    base: '/_nuxt/',
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@import "@/assets/css/_variables.scss";',
-        },
-      },
-    },
-  },
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    }],
+  devtools: { enabled: false },
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.ico' }],
-    },
-  },
-  imports: {
-    dirs: ['store'],
-  },
-  runtimeConfig: {
-    public: {
-      openaiApiKey: process.env.NUXT_OPENAI_API_KEY,
-    },
-  },
-  nitro: {
-    devProxy: {
-      '/rakuten': {
-        target: 'https://books.rakuten.co.jp',
-        changeOrigin: true,
-        // hostRewrite: true,
-        // cookieDomainRewrite: true,
-        headers: {
-          'X-Forwarded-Host': 'localhost:3000',
-          'X-Forwarded-Proto': 'http',
-        },
+      // エスケープ
+      title: 'Ryo\'s Portfolio',
+      htmlAttrs: {
+        lang: 'ja',
       },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'format-detection', content: 'telephone=no' },
+      ],
+      titleTemplate: '%s | Ryo\'s Portfolio',
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href:
+            process.env.NUXT_PUBLIC_ENV === 'production'
+              ? '/favicon.ico'
+              : process.env.NUXT_PUBLIC_ENV === 'staging'
+                ? '/favicon-stg.ico'
+                : '/favicon-local.ico',
+        },
+      ],
     },
-  }
+  },
+  future: {
+    compatibilityVersion: 4,
+  },
+  experimental: {
+    typedPages: true,
+  },
+  compatibilityDate: '2024-11-01',
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
+  primevue: {
+    importTheme: { from: 'assets/themes/mytheme' },
+  },
 })
