@@ -3,7 +3,7 @@ const menus: {
   key: string
   label: string
   to: string
-} = [
+}[] = [
   {
     key: 'home',
     label: 'Home',
@@ -26,6 +26,18 @@ const menus: {
 
   },
 ]
+const route = useRoute()
+const isActiveLink = (key: string): boolean => {
+  switch (key) {
+    case 'blog':
+    case 'works':
+      return route.path.startsWith(`/${key}`)
+    default:
+      return false
+  }
+}
+
+const visibleSpMenu = ref<boolean>(false)
 </script>
 
 <template>
@@ -42,9 +54,57 @@ const menus: {
             class="rounded-full"
           />
         </NuxtLink>
-        <span class="font-bold">Admin</span>
+        <GitLatestCommit />
       </div>
-      <span>{{ 'aaa' }}</span>
+      <nav>
+        <!-- PC用メニュー -->
+        <ul class="hidden lg:flex list-none gap-8">
+          <li
+            v-for="menu in menus"
+            :key="menu.key"
+          >
+            <NuxtLink
+              :to="menu.to"
+              :class="{ 'router-link-active': isActiveLink(menu.key) }"
+            >
+              {{ menu.label }}
+            </NuxtLink>
+          </li>
+        </ul>
+        <!-- SP用メニューアイコン -->
+        <Button
+          icon="pi pi-bars"
+          class="lg:hidden"
+          severity="secondary"
+          outlined
+          @click="visibleSpMenu = !visibleSpMenu"
+        />
+        <!-- SP用メニュー -->
+        <Drawer
+          v-model:visible="visibleSpMenu"
+          header=" "
+          position="right"
+        >
+          <ul class="list-none">
+            <li
+              v-for="menu in menus"
+              :key="menu.key"
+              class="pb-4"
+            >
+              <NuxtLink :to="menu.to">
+                {{ menu.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </Drawer>
+      </nav>
     </div>
   </header>
 </template>
+
+<style scoped lang="scss">
+.router-link-active {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+</style>

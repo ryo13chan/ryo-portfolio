@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@primevue/nuxt-module',
     '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    'dayjs-nuxt',
   ],
   components: [
     {
@@ -16,7 +18,6 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
     head: {
-      // エスケープ
       title: 'Ryo\'s Portfolio',
       htmlAttrs: {
         lang: 'ja',
@@ -27,20 +28,11 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' },
       ],
       titleTemplate: '%s | Ryo\'s Portfolio',
-      link: [
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href:
-            process.env.NUXT_PUBLIC_ENV === 'production'
-              ? '/favicon.ico'
-              : process.env.NUXT_PUBLIC_ENV === 'staging'
-                ? '/favicon-stg.ico'
-                : '/favicon-local.ico',
-        },
-      ],
     },
   },
+  css: [
+    'primeicons/primeicons.css',
+  ],
   future: {
     compatibilityVersion: 4,
   },
